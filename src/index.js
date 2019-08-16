@@ -27,13 +27,35 @@ function ProductCategoryRow(props) {
   );
 }
 
-function SearchBar(props) {
-  return (
-    <div>
-      <input type='text' name='filter' /><br />
-      <input type="checkbox" name="inStock" />In Stock
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { filterText: '', inStockOnly: false }
+
+    this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+    this.handleIsStockOnlyChange = this.handleIsStockOnlyChange.bind(this);
+  }
+
+  handleFilterTextChange(event) {
+    this.setState({ filterText: event.target.value });
+  }
+
+  handleIsStockOnlyChange(event) {
+    this.setState({ filteinStockOnlyrText: event.target.value });
+  }
+
+  render() {
+    return (
+      <div>
+        <input type='text' name='filter'
+          value={this.state.filterText}
+          onChange={this.handleFilterTextChange} /><br />
+        <input type="checkbox" name="inStock"
+          value={this.state.isStockOnly}
+          onChange={this.handleFilterTextChange} />In Stock
         </div>
-  );
+    )
+  }
 }
 
 function ProductTable(props) {
