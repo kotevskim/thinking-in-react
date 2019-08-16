@@ -68,14 +68,15 @@ function ProductTable(props) {
 
   return (
     <div>
+
+      <div className='row'>
+        <span>Name</span>
+        <span>Price</span>
+      </div>
       {
         Object.keys(byCategory).map(category =>
           (
             <div>
-              <div className='row'>
-                <span>Name</span>
-                <span>Price</span>
-              </div>
               <ProductCategoryRow category={category} />
               {
                 byCategory[category].map(product =>
@@ -86,6 +87,7 @@ function ProductTable(props) {
           )
         )
       }
+
     </div>
   );
 }
