@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.filterable-table {
+  width: 200px;
+  padding: 10px;
+}
+
+
+.row {
+  span {
+    display: inline-block;
+    width: 50%;
+  }
+}
+
+.category-heading {
+  font-weight: bold;
+}
+
+.product-item {
+  padding: 5px;
+  border-bottom: 1px solid lightgray;
+}
