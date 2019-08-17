@@ -22,9 +22,7 @@ function ProductRow(props) {
 }
 
 function ProductCategoryRow(props) {
-  return (
-    <div className='category-heading'>{props.category}</div>
-  );
+  return <div className='category-heading'>{props.category}</div>;
 }
 
 class SearchBar extends React.Component {
@@ -58,13 +56,12 @@ class SearchBar extends React.Component {
 }
 
 function ProductTable(props) {
-
   const byCategory = {};
   props.products
     .filter(p => {
-      const filter1 = props.filterText !== '' ? p.name.toLowerCase().includes(props.filterText) : true;
-      const filter2 = props.isStockOnly === true ? p.stocked === true : true;
-      return filter1 && filter2
+      const passName = props.filterText !== '' ? p.name.toLowerCase().includes(props.filterText) : true;
+      const passStocked = props.isStockOnly === true ? p.stocked === true : true;
+      return passName && passStocked
     })
     .map(p => {
       byCategory[p.category] = byCategory[p.category] || [];
@@ -84,7 +81,9 @@ function ProductTable(props) {
               <ProductCategoryRow category={category} />
               {
                 byCategory[category]
-                  .map(product => <ProductRow name={product.name} price={product.price} />)
+                  .map(product =>
+                    <ProductRow name={product.name} price={product.price} />
+                  )
               }
             </div>
           )
