@@ -1,3 +1,8 @@
+This is the exercise from the official React Docs: Main Concepts > Thinking in React.  
+Link: https://reactjs.org/docs/thinking-in-react.html  
+It is a nice walk through of the thought process of building a searchable product data table using React.  
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
